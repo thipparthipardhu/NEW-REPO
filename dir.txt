@@ -1,0 +1,17 @@
+#!/bin/bash
+# Directory path to check and create
+directory="/home/ec2-user/hhh"
+# Check if the directory exists
+if [ -d "$directory" ]; then
+  echo "Directory '$directory' already exists."
+else
+  # Create the directory
+  mkdir -p "$directory"
+  # Check if the directory creation was successful
+  if [ $? -eq 0 ]; then
+    echo "Directory '$directory' created successfully."
+  else
+    echo "Failed to create directory '$directory'."
+  fi
+fi
+
